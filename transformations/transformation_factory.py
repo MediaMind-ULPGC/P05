@@ -8,5 +8,6 @@ class TransformationsFactory:
     }
 
 
-    @stathic
-    def initialize_transformations
+    @staticmethod
+    def initialize_transformation(key):
+        return TransformationsFactory.__transformations[key]
