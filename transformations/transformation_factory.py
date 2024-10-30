@@ -1,3 +1,6 @@
+from transformations.traslation import Traslation
+from transformations.rotation import Rotation
+from transformations.scalated import Scalated
 
 class TransformationsFactory:
 
