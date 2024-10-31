@@ -2,6 +2,7 @@ from transformations.traslation import Traslation
 from transformations.rotation import Rotation
 from transformations.scalated import Scalated
 from transformations.distortions import Distortions
+from transformations.apply_noise import ApplyNoise
 
 class TransformationsFactory:
 
@@ -9,7 +10,8 @@ class TransformationsFactory:
         'Traslacion': Traslation(),
         'Rotacion': Rotation(),
         'Escalado': Scalated(),
-        'Distorciones': Distortions()
+        'Distorciones': Distortions(),
+        'Ruido': ApplyNoise()
     }
 
 
