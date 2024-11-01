@@ -124,7 +124,8 @@ Estos pasos se han desarrollado en la función `align_image` que se muestra a co
 def align_image(img_orig, nfeatures, nOctaveLayers, contrastThreshold, edgeThreshold, sigma, n=10):
 
     img_orig = cv.cvtColor(img_orig, cv.COLOR_BGR2GRAY)
-    sift = cv.SIFT_create(nfeatures=nfeatures, nOctaveLayers=nOctaveLayers, contrastThreshold=contrastThreshold, edgeThreshold=edgeThreshold, sigma=sigma)
+    sift = cv.SIFT_create(nfeatures=nfeatures, nOctaveLayers=nOctaveLayers, contrastThreshold=contrastThreshold,
+                            edgeThreshold=edgeThreshold, sigma=sigma)
 
     img1, img2, img3, _, _, _ = transform_img(img_orig)
     transformed_img = random.choice([img1, img2, img3])
