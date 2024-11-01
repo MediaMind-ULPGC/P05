@@ -24,7 +24,7 @@ def reduce_noise(img):
     return img
 
 
-""" Aplicar SIFT a una imagen """
+""" Aplicar SIFT a las imágenes """
 def apply_sift(sift, img_orig, n=10):
     founded_matches = []
 
@@ -76,7 +76,7 @@ def align_image(img_orig, nfeatures, nOctaveLayers, contrastThreshold, edgeThres
         src_pts = np.float32([keyponits1[m.queryIdx].pt for m in best_matches]).reshape(-1, 1, 2)
         dst_pts = np.float32([keyponits2[m.trainIdx].pt for m in best_matches]).reshape(-1, 1, 2)
 
-        M, mask = cv.findHomography(dst_pts, src_pts, cv.RANSAC, 5.0)
+        M, _ = cv.findHomography(dst_pts, src_pts, cv.RANSAC, 5.0)
 
         height, width = img_orig.shape[:2]
         size = (width, height)
