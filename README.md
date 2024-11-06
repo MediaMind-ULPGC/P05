@@ -164,9 +164,11 @@ def align_image(img_orig, nfeatures, nOctaveLayers, contrastThreshold, edgeThres
         return None, None
 ```
 
-### d. Notificación de errores.
+### d. Notificación de errores
 
 ## Aportaciones propias:
 
 ### 1. Manual 
 ### 2. Tumores ejemplo
+
+Un usuario puede utilizar este programa para detectar tumores en diferentes imágenes.
