@@ -166,9 +166,64 @@ def align_image(img_orig, nfeatures, nOctaveLayers, contrastThreshold, edgeThres
 
 ### d. Notificación de errores
 
+El usuario será notificado por la aplicación cuando ocurran los siguientes casos de error:
+
+1. Cuando el usuario trate de emplear el detector de características y este no halla determinado un área de interés previamente, el programa notificará que no existe ningún área de interés, para que así el usuario determine el área de interés deseado.
+
+2. Cuando el usario esté empleando el corrector de imágenes y no se encuentran coincidencias para realizar la correción de la imagen transformada, el programa notificará de ello al usuario.
+
+
 ## Aportaciones propias:
 
 ### 1. Manual 
+
+Se ha implementado un manual de texto que proporciona instrucciones detalladas al usuario sobre cómo interactuar con el programa utilizando el módulo tkinter de Python, empleado para la creación de interfaces gráficas de usuario (GUI). Este manual permite al usuario acceder a todas las opciones del programa introduciendo el comando help, como puede ser el caso de emplear el detector de características SIFT o el corregir la imagen transformada.
+
+```python
+class CustomShell:
+    # Configura la ventana gráfica y prepara los componentes (área de texto e input).
+    def __init__(self, master, close_queue):
+        ...
+
+    # Procesa la entrada del usuario, ejecutando comandos o mostrando mensajes de error.
+    def process_input(self, event):
+        ...
+
+    #  Revisa si se ha enviado un mensaje a la cola para cerrar el shell y lo hace si es necesario.
+    def check_queue(self):
+        ...
+```
+
 ### 2. Tumores ejemplo
 
-Un usuario puede utilizar este programa para detectar tumores en diferentes imágenes.
+Un usuario puede utilizar este programa para detectar tumores en diferentes imágenes, debido a la diferencia entre las distintas imágenes con tumores es bastante complejo realizar un detector de características para múltiples imágenes diferentes, es por ello que aportaremos lo que hemos conseguido hasta el momento de la entrega.
+
+
+Para ello hemos implementado las siguientes funciones:
+
+1. `search_tumors` : empleada para detectar regiones de interés que podrían contener tumores en un conjunto de imágenes. Utiliza el algoritmo SIFT para identificar características clave en una plantilla de tumor y luego busca coincidencias en las imágenes proporcionadas.
+
+```python
+def search_tumors(img_orig, folders, n=6, min_matches=6, max_distance=300)
+```
+
+- img_orig: No se usa en la función, se puede ignorar o eliminar.
+- folders: Una lista con los nombres de las carpetas que contienen las imágenes a procesar.
+- n: Número de características a detectar por SIFT. El valor predeterminado es 6.
+- min_matches: Número mínimo de buenas coincidencias requeridas para considerar un tumor detectado. El valor predeterminado es 6.
+- max_distance: Distancia máxima entre coincidencias para considerarlas buenas. El valor predeterminado es 300.
+
+
+2. `show_detected_tumors`: empleada para mostrar las imágenes donde se han detectado posibles tumores, resaltando las áreas de interés con rectángulos.
+
+```python
+def show_detected_tumors(images, coordinates, columns=3)
+```
+-images: Lista de rutas de archivos de las imágenes donde se han detectado tumores.
+- coordinates: Lista de listas de coordenadas. Cada lista interna contiene tuplas con las coordenadas (x1, y1, x2, y2) de las regiones donde se han detectado tumores en la imagen correspondiente.
+- columns (opcional): Número de columnas para la disposición de las imágenes en la visualización. El valor predeterminado es 3.
+
+
+
+
+
