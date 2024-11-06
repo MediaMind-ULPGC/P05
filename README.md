@@ -30,7 +30,7 @@ cv.createTrackbar('Matches', 'image', 10, 100, nothing)
 Por un lado, se seleccionará un área de interés en tres tipos de imágenes: una imagen de naturaleza médica, otra imagen telemétrica y otra personal. Las imágenes utilizadas forman parte de un subconjunto de datos extraído de los siguientes datasets de la plataforma Kaggle:
 
 - **Imágenes telemétricas**: disponibles en el siguiente enlace: [Aerial Satellite Images Dataset](https://www.kaggle.com/datasets/ancaco12/aerial-satellite-images)
-- **Imágenes médicas**: disponible en el siguiente enlace: **(enlace a dataset de imágenes médicas a completar)**.
+- **Imágenes médicas**: disponible en el siguiente enlace: [Brain tumors 256x256](https://www.kaggle.com/datasets/thomasdubail/brain-tumors-256x256).
 
 Además de estas fuentes, se incorporan imágenes adicionales proporcionadas específicamente para este proyecto.
 **Falta enlace médicas y las nuestras**
