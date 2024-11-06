@@ -4,6 +4,8 @@ Integrantes:
 - Gerardo León Quintana
 - Susana Suárez Mendoza
 
+<div align="justify">
+    
 ## Ejercicio. Desarrolle una aplicación que permita: 
 
 ### a. A través de la interfaz modificar los parámetros del detector de características SIFT. 
@@ -219,11 +221,11 @@ def search_tumors(img_orig, folders, n=6, min_matches=6, max_distance=300)
 ```python
 def show_detected_tumors(images, coordinates, columns=3)
 ```
--images: Lista de rutas de archivos de las imágenes donde se han detectado tumores.
+- images: Lista de rutas de archivos de las imágenes donde se han detectado tumores.
 - coordinates: Lista de listas de coordenadas. Cada lista interna contiene tuplas con las coordenadas (x1, y1, x2, y2) de las regiones donde se han detectado tumores en la imagen correspondiente.
 - columns (opcional): Número de columnas para la disposición de las imágenes en la visualización. El valor predeterminado es 3.
 
-
+</div>
 
 
 
